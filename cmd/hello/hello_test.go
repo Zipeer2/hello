@@ -10,7 +10,7 @@ import (
 func TestPrintToPrintsHelloMessageToWriter(t *testing.T) {
 	t.Parallel()
 	var buf bytes.Buffer
-	hello.PrintTo(&buf)
+	hello.Print(&buf)
 	got := buf.String()
 	want := "Hello, world\n"
 	if got != want {
