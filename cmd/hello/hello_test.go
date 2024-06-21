@@ -7,13 +7,15 @@ import (
 	"github.com/Zipeer2/hello"
 )
 
-func TestPrintToPrintsHelloMessageToWriter(t *testing.T) {
+func TestPrintPrintsHelloMessageToOutput(t *testing.T) {
 	t.Parallel()
-	var buf bytes.Buffer
-	hello.Print(&buf)
-	got := buf.String()
+	buf := new(bytes.Buffer)
+	p := hello.NewPrinter()
+	p.Output = buf
+	p.Print()
 	want := "Hello, world\n"
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
+	got := buf.String()
+	if want != got {
+		t.Errorf("want %q, got %q", want, got)
 	}
 }
