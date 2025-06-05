@@ -2,8 +2,9 @@ package hello_test
 
 import (
 	"bytes"
-	"hello"
 	"testing"
+
+	"github.com/Zipeer2/hello"
 )
 
 func TestPrintTo_PrintsHelloMessageToGivenWriter(t *testing.T) {
